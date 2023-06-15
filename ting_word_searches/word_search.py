@@ -23,5 +23,25 @@ def exists_word(word, instance: Queue):
     return files
 
 
-def search_by_word(word, instance):
-    """Aqui irá sua implementação"""
+def search_by_word(word: str, instance: Queue):
+    files = []
+
+    for index in range(len(instance)):
+        actual_file = instance.search(index)
+        file_finded = {
+            "palavra": word,
+            "arquivo": actual_file["nome_do_arquivo"],
+            "ocorrencias": [],
+        }
+        for index_second, line in enumerate(actual_file["linhas_do_arquivo"]):
+            if word.lower() in line.lower():
+                file_finded["ocorrencias"].append(
+                    {
+                        "linha": index_second + 1,
+                        "conteudo": line
+                    }
+                )
+        if file_finded["ocorrencias"]:
+            files.append(file_finded)
+
+    return files
