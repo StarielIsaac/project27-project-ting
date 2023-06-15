@@ -36,5 +36,5 @@ def remove(instance: Queue):
     print(f"Arquivo {removed} removido com sucesso")
 
 
-def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+def file_metadata(instance: Queue, position: int):
+    
