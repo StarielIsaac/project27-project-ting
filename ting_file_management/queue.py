@@ -9,10 +9,12 @@ class Queue(AbstractQueue):
         return len(self._data)
 
     def enqueue(self, value):
-        self._data += 1
+        self._data.append(value)
 
     def dequeue(self):
-        self._data += 1
+        if len(self._data) == 0:
+            return None
+        return self._data.pop(0)
 
     def search(self, index):
         """Aqui irá sua implementação"""
