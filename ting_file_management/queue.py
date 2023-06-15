@@ -6,14 +6,13 @@ class Queue(AbstractQueue):
         self._data = []
 
     def __len__(self):
-        """Aqui irá sua implementação"""
+        return len(self._data)
 
     def enqueue(self, value):
-        """Aqui irá sua implementação"""
+        self._data += 1
 
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        self._data += 1
 
     def search(self, index):
         """Aqui irá sua implementação"""
-P
